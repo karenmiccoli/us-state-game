@@ -32,7 +32,7 @@ while len(correct_guesses) < 50:
         state_name.color("red")
         state_name.write(state_info.state.item(), font=FONT)
 
-missed_states = [x for x in states if x not in set(correct_guesses)]
+missed_states = [state for state in states if state not in correct_guesses ]
 df = pandas.DataFrame(missed_states, columns=['missed_states'])
 df.to_csv("results.csv")
 
